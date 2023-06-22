@@ -2,44 +2,60 @@ package com.example.myapplication.fragment.patient.mainpage.doctors.speciality
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentSpecialtyListBinding
+import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.RecordsItem
+import com.example.myapplication.fragment.patient.mainpage.examinations.Result
 
-class SpecialityAdapter(private var specialityList: ArrayList<SpecialtyList>, val listener: MyClickListener) :
-    RecyclerView.Adapter<SpecialityAdapter.MyView>() {
+class SpecialityAdapter() :
+    ListAdapter<Result, SpecialityAdapter.MyView>(DiffCallBack()) {
 
-    inner class MyView(val itemBinding: FragmentSpecialtyListBinding): RecyclerView.ViewHolder(itemBinding.root){
 
-        init {
-            itemBinding.root.setOnClickListener {
-                val position = adapterPosition
-                listener.onClick(position)
-            }
+    class DiffCallBack : DiffUtil.ItemCallback<Result>() {
+        override fun areItemsTheSame(oldItem: Result, newItem: Result): Boolean {
+            return oldItem._id == newItem._id
         }
 
+        override fun areContentsTheSame(oldItem: Result, newItem: Result): Boolean {
+            return oldItem._id == newItem._id
+        }
+    }
+
+    inner class MyView(val itemBinding: FragmentSpecialtyListBinding) :
+        RecyclerView.ViewHolder(itemBinding.root) {
+
+
+        fun bind(item: Result) {
+            itemBinding.specialityName.text = item.name
+            itemBinding.specialityImage.setImageResource(R.drawable.dermatology)
+        }
 
     }
-    fun setFilteredList(specialityList: java.util.ArrayList<SpecialtyList>){
-        this.specialityList = specialityList
-        notifyDataSetChanged()
 
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyView {
-        return MyView(FragmentSpecialtyListBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return MyView(
+            FragmentSpecialtyListBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
-    override fun getItemCount(): Int {
-        return specialityList.size
-    }
 
     override fun onBindViewHolder(holder: MyView, position: Int) {
-        holder.itemBinding.specialityImage.setImageResource(specialityList[position].titleImage)
-        holder.itemBinding.specialityName.text = specialityList[position].heading
+        holder.bind(getItem(position))
+        holder.itemBinding.root.setOnClickListener {
+            val action = SpecialityFragmentDirections.actionSpecialityToDoctors(getItem(position).name!!)
+            it.findNavController().navigate(action)
+        }
 
     }
-    interface MyClickListener{
-        fun onClick(position: Int)
-    }
+
 }
 

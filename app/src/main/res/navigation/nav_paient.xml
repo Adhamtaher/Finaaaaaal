@@ -12,7 +12,7 @@
         app:destination="@id/confirmRound" />
     <fragment
         android:id="@+id/mainPagePatient"
-        android:name="com.example.myapplication.fragment.patient.navmenu.MainPagePatient"
+        android:name="com.example.myapplication.fragment.patient.navmenu.MainPagePatientFragment"
         android:label="fragment_main_page_patient"
         tools:layout="@layout/fragment_main_page_patient" >
         <action
@@ -98,10 +98,15 @@
         tools:layout="@layout/fragment_doctors" >
         <action
             android:id="@+id/action_doctors_to_booking"
-            app:destination="@id/booking" />
+            app:destination="@id/booking" >
+        </action>
+
         <action
             android:id="@+id/action_doctors_to_confirmBooking"
             app:destination="@id/confirmBooking" />
+        <argument
+            android:name="speciality"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/doctorActivity"
@@ -188,13 +193,10 @@
         <action
             android:id="@+id/action_analysisHistory_to_medicalHistory"
             app:destination="@id/medicalHistory" />
-        <action
-            android:id="@+id/action_analysisHistory_to_analysisResult"
-            app:destination="@id/analysisResult" />
     </fragment>
     <fragment
         android:id="@+id/radiationHistory"
-        android:name="com.example.myapplication.fragment.patient.medicalhistory.radiation.RadiationHistory"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.radiation.RadiationHistoryFragment"
         android:label="RadiationHistory" >
         <action
             android:id="@+id/action_radiationHistory_to_radiationActivity"
@@ -202,9 +204,6 @@
         <action
             android:id="@+id/action_radiationHistory_to_medicalHistory"
             app:destination="@id/medicalHistory" />
-        <action
-            android:id="@+id/action_radiationHistory_to_radiationDetails"
-            app:destination="@id/radiationResult" />
     </fragment>
     <fragment
         android:id="@+id/surgeriesHistory"
@@ -213,13 +212,10 @@
         <action
             android:id="@+id/action_surgeriesHistory_to_medicalHistory"
             app:destination="@id/medicalHistory" />
-        <action
-            android:id="@+id/action_surgeriesHistory_to_surgeriesResults"
-            app:destination="@id/surgeriesResults" />
     </fragment>
     <fragment
         android:id="@+id/medicalCondition"
-        android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.MedicalCondition"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.MedicalConditionFragment"
         android:label="MedicalCondition" >
         <action
             android:id="@+id/action_medicalCondition_to_diagnosis2"
@@ -227,14 +223,29 @@
         <action
             android:id="@+id/action_medicalCondition_to_medicalHistory"
             app:destination="@id/medicalHistory" />
+        <action
+            android:id="@+id/action_medicalCondition_to_labFragment"
+            app:destination="@id/labFragment" />
+        <action
+            android:id="@+id/action_medicalCondition_to_radFragment"
+            app:destination="@id/radFragment" />
+        <action
+            android:id="@+id/action_medicalCondition_to_operationFragment"
+            app:destination="@id/operationFragment" />
+        <action
+            android:id="@+id/action_medicalCondition_to_medicationFragment"
+            app:destination="@id/medicationFragment" />
     </fragment>
     <fragment
         android:id="@+id/diagnosis2"
-        android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.diagnosis.Diagnosis"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.diagnosis.DiagnosisFragment"
         android:label="Diagnosis" >
         <action
             android:id="@+id/action_diagnosis2_to_diagnosisDetails"
             app:destination="@id/diagnosisDetails" />
+        <action
+            android:id="@+id/action_diagnosis2_to_medicalRecordAddFragment"
+            app:destination="@id/medicalRecordAddFragment" />
     </fragment>
     <fragment
         android:id="@+id/booking"
@@ -244,6 +255,13 @@
         <action
             android:id="@+id/action_booking_to_confirmBooking"
             app:destination="@id/confirmBooking" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="specialty"
+            app:argType="string" />
+
     </fragment>
     <fragment
         android:id="@+id/analysisResult"
@@ -251,16 +269,19 @@
         android:label="AnalysisResult" />
     <fragment
         android:id="@+id/analysisBooking"
-        android:name="com.example.myapplication.fragment.patient.mainpage.analysis.AnalysisBooking"
+        android:name="com.example.myapplication.fragment.patient.mainpage.analysis.AnalysisBookingFragment"
         android:label="fragment_analysis_booking"
         tools:layout="@layout/fragment_analysis_booking" >
         <action
             android:id="@+id/action_analysisBooking_to_mainPagePatient"
             app:destination="@id/mainPagePatient" />
+        <argument
+            android:name="id"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/radiations"
-        android:name="com.example.myapplication.fragment.patient.mainpage.examinations.Radiations"
+        android:name="com.example.myapplication.fragment.patient.mainpage.examinations.RadiationsFragment"
         android:label="fragment_radiations"
         tools:layout="@layout/fragment_radiations" >
         <action
@@ -269,7 +290,7 @@
     </fragment>
     <fragment
         android:id="@+id/analysis"
-        android:name="com.example.myapplication.fragment.patient.mainpage.analysis.Analysis"
+        android:name="com.example.myapplication.fragment.patient.mainpage.analysis.AnalysisFragment"
         android:label="fragment_analysis"
         tools:layout="@layout/fragment_analysis" >
         <action
@@ -278,16 +299,19 @@
     </fragment>
     <fragment
         android:id="@+id/radiationBooking"
-        android:name="com.example.myapplication.fragment.patient.mainpage.examinations.RadiationBooking"
+        android:name="com.example.myapplication.fragment.patient.mainpage.examinations.RadiationBookingFragment"
         android:label="fragment_radiation_booking"
         tools:layout="@layout/fragment_radiation_booking" >
         <action
             android:id="@+id/action_radiationBooking_to_mainPagePatient"
             app:destination="@id/mainPagePatient" />
+        <argument
+            android:name="id"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/speciality"
-        android:name="com.example.myapplication.fragment.patient.mainpage.doctors.speciality.Speciality"
+        android:name="com.example.myapplication.fragment.patient.mainpage.doctors.speciality.SpecialityFragment"
         android:label="fragment_speciality"
         tools:layout="@layout/fragment_speciality" >
         <action
@@ -302,6 +326,17 @@
         <action
             android:id="@+id/action_confirmBooking_to_confirmRound"
             app:destination="@id/confirmRound" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <argument
+            android:name="specialty"
+            app:argType="string" />
+        <argument
+            android:name="schedule"
+            app:argType="com.example.myapplication.fragment.patient.mainpage.doctors.doctors.ScheduleItem" />
+
+
     </fragment>
     <fragment
         android:id="@+id/confirmRound"
@@ -311,12 +346,21 @@
         <action
             android:id="@+id/action_confirmRound_to_mainPagePatient"
             app:destination="@id/mainPagePatient" />
+        <argument
+            android:name="turn"
+            app:argType="integer" />
+
+
     </fragment>
     <fragment
         android:id="@+id/firstAid"
-        android:name="com.example.myapplication.fragment.patient.mainpage.firstaid.FirstAid"
+        android:name="com.example.myapplication.fragment.patient.mainpage.firstaid.FirstAidFragment"
         android:label="fragment_first_aid"
-        tools:layout="@layout/fragment_first_aid" />
+        tools:layout="@layout/fragment_first_aid" >
+        <action
+            android:id="@+id/action_firstAid_to_firstAidDetailsFragment"
+            app:destination="@id/firstAidDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/doctorDetalisHistory"
         android:name="com.example.myapplication.fragment.patient.medicalhistory.doctor.DoctorDetalisHistory"
@@ -328,19 +372,37 @@
     </fragment>
     <fragment
         android:id="@+id/radiationResult"
-        android:name="com.example.myapplication.fragment.patient.medicalhistory.radiation.RadiationResults"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.radiation.RadiationResultsFragment"
         android:label="fragment_radiation_details"
-        tools:layout="@layout/fragment_radiation_results" />
+        tools:layout="@layout/fragment_radiation_results" >
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/surgeriesResults"
-        android:name="com.example.myapplication.fragment.patient.medicalhistory.surgeries.SurgeriesResults"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.surgeries.SurgeriesResultsFragment"
         android:label="fragment_surgeries_results"
-        tools:layout="@layout/fragment_surgeries_results" />
+        tools:layout="@layout/fragment_surgeries_results" >
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/diagnosisDetails"
         android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.diagnosis.DiagnosisDetails"
         android:label="fragment_diagnosis_details"
-        tools:layout="@layout/fragment_diagnosis_details" />
+        tools:layout="@layout/fragment_diagnosis_details" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/doctorDetailsActivity"
         android:name="com.example.myapplication.fragment.patient.activity.doctor.DoctorDetailsActivity"
@@ -410,5 +472,71 @@
         <action
             android:id="@+id/action_more_to_mainPagePatient"
             app:destination="@id/mainPagePatient" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstAidDetailsFragment"
+        android:name="com.example.myapplication.fragment.patient.mainpage.firstaid.FirstAidDetailsFragment"
+        android:label="fragment_first_aid_details"
+        tools:layout="@layout/fragment_first_aid_details" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/labFragment"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.lab.LabFragment"
+        android:label="fragment_lab"
+        tools:layout="@layout/fragment_lab" >
+        <action
+            android:id="@+id/action_labFragment_to_medicalRecordAddFragment"
+            app:destination="@id/medicalRecordAddFragment" />
+        <action
+            android:id="@+id/action_labFragment_to_radiationResult"
+            app:destination="@id/radiationResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/radFragment"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.rad.RadFragment"
+        android:label="fragment_rad"
+        tools:layout="@layout/fragment_rad" >
+        <action
+            android:id="@+id/action_radFragment_to_medicalRecordAddFragment"
+            app:destination="@id/medicalRecordAddFragment" />
+        <action
+            android:id="@+id/action_radFragment_to_radiationResult"
+            app:destination="@id/radiationResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/operationFragment"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.operation.OperationFragment"
+        android:label="fragment_operation"
+        tools:layout="@layout/fragment_operation" >
+        <action
+            android:id="@+id/action_operationFragment_to_medicalRecordAddFragment"
+            app:destination="@id/medicalRecordAddFragment" />
+        <action
+            android:id="@+id/action_operationFragment_to_surgeriesResults"
+            app:destination="@id/surgeriesResults" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicationFragment"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.medication.MedicationFragment"
+        android:label="fragment_medication"
+        tools:layout="@layout/fragment_medication" >
+        <action
+            android:id="@+id/action_medicationFragment_to_medicalRecordAddFragment"
+            app:destination="@id/medicalRecordAddFragment" />
+        <action
+            android:id="@+id/action_medicationFragment_to_surgeriesResults"
+            app:destination="@id/surgeriesResults" />
+    </fragment>
+    <fragment
+        android:id="@+id/medicalRecordAddFragment"
+        android:name="com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.MedicalRecordAddFragment"
+        android:label="fragment_medical_record_add"
+        tools:layout="@layout/fragment_medical_record_add" >
+        <argument
+            android:name="type"
+            app:argType="string" />
     </fragment>
 </navigation>

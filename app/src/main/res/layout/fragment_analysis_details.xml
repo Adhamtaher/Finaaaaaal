@@ -54,7 +54,7 @@
             app:layout_constraintEnd_toEndOf="@+id/textView50"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/textView50"
-            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+            app:layout_constraintTop_toBottomOf="@+id/txtDate" />
 
         <TextView
             android:id="@+id/textView29"
@@ -134,7 +134,7 @@
             app:layout_constraintEnd_toEndOf="@+id/username"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/username"
-            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
         <EditText
             android:id="@+id/username"
@@ -178,7 +178,7 @@
             android:layout_marginStart="24dp"
             android:importantForAccessibility="no"
             android:src="@drawable/spec1"
-            app:layout_constraintBottom_toBottomOf="@+id/textView25"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDate"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView23" />
 
@@ -191,13 +191,13 @@
             android:text="@string/referred_by"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView25"
+            app:layout_constraintEnd_toEndOf="@+id/txtDate"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView25"
+            app:layout_constraintStart_toStartOf="@+id/txtDate"
             app:layout_constraintTop_toBottomOf="@+id/phonenumber" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/txtDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -292,7 +292,7 @@
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"

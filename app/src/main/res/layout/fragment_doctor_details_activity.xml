@@ -12,7 +12,7 @@
 
 
         <TextView
-            android:id="@+id/textView27"
+            android:id="@+id/txtFees"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -38,7 +38,7 @@
             android:layout_marginStart="24dp"
             android:importantForAccessibility="no"
             android:src="@drawable/baseline_attach_money_24"
-            app:layout_constraintBottom_toBottomOf="@+id/textView27"
+            app:layout_constraintBottom_toBottomOf="@+id/txtFees"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView26" />
 
@@ -51,10 +51,10 @@
             android:text="@string/fees"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView27"
+            app:layout_constraintEnd_toEndOf="@+id/txtFees"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView27"
-            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+            app:layout_constraintStart_toStartOf="@+id/txtFees"
+            app:layout_constraintTop_toBottomOf="@+id/txtDate" />
 
         <ImageView
             android:id="@+id/imageView6"
@@ -121,7 +121,7 @@
             app:layout_constraintTop_toBottomOf="@+id/doctorImage" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -172,7 +172,7 @@
             app:layout_constraintEnd_toEndOf="@+id/username"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/username"
-            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+            app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
         <EditText
             android:id="@+id/username"
@@ -230,7 +230,7 @@
             android:layout_marginStart="24dp"
             android:importantForAccessibility="no"
             android:src="@drawable/baseline_access_time_242"
-            app:layout_constraintBottom_toBottomOf="@+id/textView25"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDate"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView23" />
 
@@ -243,13 +243,13 @@
             android:text="@string/appointment_time"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView25"
+            app:layout_constraintEnd_toEndOf="@+id/txtDate"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView25"
+            app:layout_constraintStart_toStartOf="@+id/txtDate"
             app:layout_constraintTop_toBottomOf="@+id/phonenumber" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/txtDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -290,7 +290,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView27"
+            app:layout_constraintTop_toBottomOf="@+id/txtFees"
             tools:ignore="VisualLintButtonSize" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,10 +6,12 @@
     android:layout_width="match_parent"
     android:id="@+id/diagnosisDetails">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background">
+        android:background="@drawable/background"
+        app:layoutDescription="@xml/fragment_diagnosis_details_xml_constraintlayout2_scene">
 
         <TextView
             android:id="@+id/textView39"
@@ -25,7 +27,7 @@
             app:layout_constraintEnd_toStartOf="@+id/imageView3"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/textView44"
-            app:layout_constraintTop_toBottomOf="@+id/textView44"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2"
             tools:ignore="TextSizeCheck" />
 
         <TextView
@@ -282,18 +284,16 @@
 
         <ImageButton
             android:id="@+id/imageView2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/emptybtn"
             android:importantForAccessibility="no"
             android:scaleType="fitCenter"
             android:src="@drawable/add"
-            app:layout_constraintBottom_toBottomOf="@+id/textView44"
+           app:layout_constraintTop_toBottomOf="@+id/textView44"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView1"
-            app:layout_constraintTop_toTopOf="@+id/textView44"
+            app:layout_constraintStart_toStartOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
@@ -307,8 +307,7 @@
             android:src="@drawable/add"
             app:layout_constraintBottom_toBottomOf="@+id/textView39"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView2"
+
             app:layout_constraintTop_toTopOf="@+id/textView39"
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -323,5 +322,5 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/analysisreport" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 </ScrollView>

@@ -1,6 +1,7 @@
 package com.example.myapplication.fragment.patient.mainpage.doctors.doctors
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class DoctorsResponse(
 
@@ -21,7 +22,7 @@ data class ScheduleItem(
 
 	@field:SerializedName("day")
 	val day: String? = null
-)
+):Serializable
 
 data class DoctorItem(
 

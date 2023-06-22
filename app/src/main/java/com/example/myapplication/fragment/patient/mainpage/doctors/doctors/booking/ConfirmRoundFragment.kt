@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentConfirmRoundBinding
 
 class ConfirmRoundFragment : Fragment() {
     private lateinit var binding: FragmentConfirmRoundBinding
+    val args : ConfirmRoundFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,6 +23,7 @@ class ConfirmRoundFragment : Fragment() {
         binding.okbutton.setOnClickListener {
             findNavController().navigate(R.id.action_confirmRound_to_mainPagePatient)
         }
+        binding.txtTurnNum.text = args.turn.toString()
 
         return binding.root
     }

@@ -13,6 +13,7 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
 import com.example.myapplication.common.Constants
@@ -24,9 +25,10 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class DoctorsFragment : Fragment() {
-
+    val args : DoctorsFragmentArgs by navArgs()
     val adapter: DoctorsAdapter by lazy {
-        DoctorsAdapter()
+
+        DoctorsAdapter(args.speciality)
     }
     lateinit var searchView: SearchView
     val viewModel by viewModels<DoctorsViewModel>()
@@ -91,7 +93,7 @@ class DoctorsFragment : Fragment() {
 
     private fun collectState(){
         lifecycleScope.launch {
-            viewModel.getAllDoctors(getToken(Constants.userToken).toString())
+            viewModel.getAllDoctors(DoctorInfo1(Filter(doctorInfoSpeciality = args.speciality)))
 
             viewModel.loginState.collect{
                 adapter.submitList(it.allDoctors)

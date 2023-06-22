@@ -69,8 +69,7 @@ class AnalysisHistory : Fragment(), AnalysisHistoryAdapter.MyClickListener {
 
     override fun onClick(position: Int) {
         when(position){
-            0-> findNavController().navigate(R.id.action_analysisHistory_to_analysisResult)
-            1-> findNavController().navigate(R.id.action_analysisHistory_to_analysisResult)
+
         }
     }
 

@@ -18,8 +18,8 @@ class DoctorsViewModel @Inject constructor(
     private val _loginState = MutableStateFlow(DoctorState())
     val loginState = _loginState.asStateFlow()
 
-    suspend fun getAllDoctors(token:String) =viewModelScope.launch {
-        repository.getAllDoctors(token).collect { resource->
+    suspend fun getAllDoctors(doctorInfo1: DoctorInfo1) =viewModelScope.launch {
+        repository.getAllDoctors(doctorInfo1).collect { resource->
             when(resource){
                 is Status.Loading->{
                     _loginState.value = loginState.value.copy(

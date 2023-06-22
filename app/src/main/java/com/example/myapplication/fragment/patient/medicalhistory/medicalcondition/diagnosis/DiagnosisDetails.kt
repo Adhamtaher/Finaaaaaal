@@ -16,14 +16,36 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.myapplication.R
+import com.example.myapplication.common.Constants
+import com.example.myapplication.common.Constants.Companion.dataStore
 import com.example.myapplication.databinding.FragmentDiagnosisDetailsBinding
 import com.example.myapplication.databinding.FragmentSurgeriesResultsBinding
+import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.DoctorInfo1
+import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.Filter
+import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.ResultsViewModel
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.MultiFormatWriter
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Locale
 
+@AndroidEntryPoint
 class DiagnosisDetails : Fragment() {
     private lateinit var binding: FragmentDiagnosisDetailsBinding
+    val viewModel: ResultsViewModel by viewModels()
+    val args: DiagnosisDetailsArgs by navArgs()
+    private lateinit var dataStore: DataStore<Preferences>
+
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?
@@ -57,6 +79,7 @@ class DiagnosisDetails : Fragment() {
         binding.imageView2.setOnClickListener {
             binding.imageView46.visibility = View.VISIBLE
         }
+        collectState()
         binding.diagnosisDetails.setOnTouchListener { _, event ->
             val imageView = binding.imageView46
             val imageRect = Rect()
@@ -99,5 +122,44 @@ class DiagnosisDetails : Fragment() {
         val right = left + width
         val bottom = top + height
         return x >= left && x <= right && y >= top && y <= bottom
+    }
+
+    private suspend fun getToken(key: String): String? {
+        dataStore = requireContext().dataStore
+        val dataStoreKey: Preferences.Key<String> = stringPreferencesKey(key)
+        val preference = dataStore.data.first()
+        return preference[dataStoreKey]
+    }
+
+    fun collectState(){
+        lifecycleScope.launch {
+            viewModel.getMedicalRecord(
+                DoctorInfo1(Filter(_id = args.id)),"Bearer ${getToken(
+                    Constants.userToken)}")
+
+            viewModel.loginState.collect{
+                binding.textView34.text = it.record?.name
+                if (it.record?.date!=null)
+                    binding.textView36.text = convertDateFormat(it.record?.date.toString())
+                binding.textView43.text = it.record?.doctorName
+                if (it.success!=null){
+                    if (it.record?.files?.isNotEmpty()!!){
+                        Glide.with(requireContext()).load(it.record?.files?.get(0)?.path).into(binding.imageView2)
+                    }
+                    binding.textView38.text = it.record.chronic.toString()
+                    binding.textView40.text = it.record.still.toString()
+                }
+
+
+
+            }
+        }
+    }
+
+    private fun convertDateFormat(inputDate: String): String {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("d-M-yyyy", Locale.getDefault())
+        val date = inputFormat.parse(inputDate)
+        return outputFormat.format(date!!)
     }
 }

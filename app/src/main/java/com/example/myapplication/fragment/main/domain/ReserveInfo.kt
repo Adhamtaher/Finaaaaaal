@@ -35,5 +35,12 @@ data class ReserveInfo(
 	val day: String? = null,
 
 	@field:SerializedName("visitType")
-	val visitType: String? = null
+	val visitType: String? = null,
+
+	@field:SerializedName("productId")
+	val productId: String? = null,
+
+	@field:SerializedName("productName")
+	val productName: String? = null
+
 )

@@ -78,7 +78,7 @@
             tools:ignore="RtlSymmetry" />
 
         <EditText
-            android:id="@+id/textView27"
+            android:id="@+id/txtFees"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -190,7 +190,7 @@
             app:layout_constraintTop_toBottomOf="@+id/doctorImage" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/spinner"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -263,12 +263,12 @@
             android:importantForAccessibility="no"
             android:src="@drawable/account"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView20"
+            app:layout_constraintTop_toBottomOf="@+id/spinner"
             app:tint="@color/white" />
 
 
         <EditText
-            android:id="@+id/textView25"
+            android:id="@+id/txtDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

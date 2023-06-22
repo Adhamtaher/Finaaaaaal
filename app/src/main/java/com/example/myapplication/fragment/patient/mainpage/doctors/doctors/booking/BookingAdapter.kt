@@ -2,19 +2,15 @@ package com.example.myapplication.fragment.patient.mainpage.doctors.doctors.book
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.FragmentBookingListBinding
+import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.ScheduleItem
 
-class BookingAdapter(private var bookingList: ArrayList<BookingList>, val listener: BookingAdapter.MyClickListener) :
+class BookingAdapter(private var scheduleItem: List<ScheduleItem>, val id:String, private val specialty :String):
     RecyclerView.Adapter<BookingAdapter.MyView>() {
 
     inner class MyView(val itemBinding: FragmentBookingListBinding): RecyclerView.ViewHolder(itemBinding.root){
-        init {
-            itemBinding.book.setOnClickListener {
-                val position = adapterPosition
-                listener.onClick(position)
-            }
-        }
 
     }
 
@@ -23,13 +19,19 @@ class BookingAdapter(private var bookingList: ArrayList<BookingList>, val listen
     }
 
     override fun getItemCount(): Int {
-        return bookingList.size
+        return scheduleItem.size
     }
 
     override fun onBindViewHolder(holder: MyView, position: Int) {
-        holder.itemBinding.appDate.text = bookingList[position].date
+        val time = scheduleItem[position].time
+        holder.itemBinding.appDate.text = "${scheduleItem[position].day}\n ${time?.from} to\n ${time?.to}"
+
+        holder.itemBinding.book.setOnClickListener {
+            val action = BookingFragmentDirections.actionBookingToConfirmBooking(id,specialty,
+                scheduleItem[position]
+            )
+            it.findNavController().navigate(action)
+        }
     }
-    interface MyClickListener{
-        fun onClick(position: Int)
-    }
+
 }

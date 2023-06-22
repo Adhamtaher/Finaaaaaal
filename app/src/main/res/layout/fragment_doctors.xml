@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/background"
             tools:context=".fragment.medicalhistory.doctor.DoctorHistoryList"
-            android:visibility="gone"
+            android:visibility="visible"
             android:id="@+id/constraintLayout"
             >
 

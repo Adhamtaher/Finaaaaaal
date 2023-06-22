@@ -5,11 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".BookingDr">
 
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/progress"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"
+            tools:visibility="gone"
+            android:backgroundTint="@color/white"
+            android:layout_centerInParent="true"
+            >
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/loading"
+                app:lottie_speed="1.5"
+                android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
@@ -57,7 +82,7 @@
             android:layout_marginTop="24dp"
             android:scaleType="fitCenter"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView20"
+            app:layout_constraintTop_toBottomOf="@+id/txtSpeciality"
             app:srcCompat="@drawable/smilingdoctor"
             tools:ignore="ContentDescription,ImageContrastCheck" />
 
@@ -74,7 +99,7 @@
             app:layout_constraintTop_toTopOf="@+id/doctorImage" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/txtFees"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -141,7 +166,7 @@
 
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/txtSpeciality"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -168,13 +193,13 @@
             android:text="@string/about_doctor"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView26"
+            app:layout_constraintEnd_toEndOf="@+id/txtInfo"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/imageView26"
+            app:layout_constraintStart_toStartOf="@+id/txtInfo"
             app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
         <TextView
-            android:id="@+id/imageView26"
+            android:id="@+id/txtInfo"
             android:layout_width="0dp"
             android:layout_height="140dp"
             android:layout_marginStart="24dp"

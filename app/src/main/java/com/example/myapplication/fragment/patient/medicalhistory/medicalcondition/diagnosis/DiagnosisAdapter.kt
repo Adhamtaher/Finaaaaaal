@@ -2,36 +2,64 @@ package com.example.myapplication.fragment.patient.medicalhistory.medicalconditi
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.FragmentDiagnosisListBinding
+import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.RecordsItem
+import com.example.myapplication.fragment.patient.medicalhistory.radiation.RadiationHistoryAdapter
+import java.text.SimpleDateFormat
+import java.util.Locale
 
-class DiagnosisAdapter(private val diagnosisList: ArrayList<DiagnosisList>, val listener: DiagnosisAdapter.MyClickListener) :
-    RecyclerView.Adapter<DiagnosisAdapter.MyView>() {
+class DiagnosisAdapter(private val listener:OnItemClickListener) :
+   ListAdapter<RecordsItem, DiagnosisAdapter.MyView>(DiffCallBack()) {
+
+    class DiffCallBack : DiffUtil.ItemCallback<RecordsItem>() {
+        override fun areItemsTheSame(oldItem: RecordsItem, newItem: RecordsItem): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: RecordsItem, newItem: RecordsItem): Boolean {
+            return oldItem.id == newItem.id
+        }
+    }
 
     inner class MyView(val itemBinding: FragmentDiagnosisListBinding): RecyclerView.ViewHolder(itemBinding.root){
+
         init {
-            itemBinding.details.setOnClickListener {
-                val position = adapterPosition
-                listener.onClick(position)
+            itemBinding.details.setOnClickListener{
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    listener.onItemClick(position)
+                }
             }
         }
+
+        fun bind(item: RecordsItem) {
+            itemBinding.type.text="Diagnose: ${item.name}"
+            itemBinding.date.text="Date ${convertDateFormat(item.date.toString())}"
+            itemBinding.chronic.text="chronic: ${item.chronic}"
+            itemBinding.active.text="active: ${item.still}"
+        }
+    }
+    fun convertDateFormat(inputDate: String): String {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("d-M-yyyy", Locale.getDefault())
+        val date = inputFormat.parse(inputDate)
+        return outputFormat.format(date!!)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyView {
         return MyView(FragmentDiagnosisListBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
-    override fun getItemCount(): Int {
-        return diagnosisList.size
-    }
+
 
     override fun onBindViewHolder(holder: MyView, position: Int) {
-        holder.itemBinding.type.text = diagnosisList[position].spec
-        holder.itemBinding.date.text = diagnosisList[position].time
-        holder.itemBinding.chronic.text = diagnosisList[position].chronic
-        holder.itemBinding.active.text = diagnosisList[position].active
+        holder.bind(getItem(position))
     }
-    interface MyClickListener{
-        fun onClick(position: Int)
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
     }
+
 }

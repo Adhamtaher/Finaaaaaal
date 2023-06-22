@@ -65,8 +65,7 @@ class SurgeriesHistory : Fragment(), SurgeriesHistoryAdapter.MyClickListener {
     }
     override fun onClick(position: Int) {
         when(position){
-            0-> findNavController().navigate(R.id.action_surgeriesHistory_to_surgeriesResults)
-            1-> findNavController().navigate(R.id.action_surgeriesHistory_to_surgeriesResults)
+
         }
     }
 }
