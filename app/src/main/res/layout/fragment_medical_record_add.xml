@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/imageView6"
@@ -32,7 +32,7 @@
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/diagnosis"
             android:textColor="#1433A4"
-            android:textSize="34sp"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/backButton"
@@ -57,10 +57,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:background="@drawable/back"
+            android:background="@drawable/back2"
+            android:fontFamily="@font/montserrat"
             android:hint="Name"
             android:padding="8dp"
-            android:textColorHint="#80212121"
+            android:textColorHint="@color/white"
             app:endIconMode="clear_text"
             app:endIconTint="@color/white"
             app:hintTextColor="@color/white"
@@ -72,7 +73,9 @@
                 android:id="@+id/txtName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/black" />
+                android:fontFamily="@font/montserrat"
+                android:inputType="text"
+                android:textColor="@color/white" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -83,10 +86,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:background="@drawable/back"
+            android:background="@drawable/back2"
+            android:fontFamily="@font/montserrat"
             android:hint="Date EX: 2021-01-01"
             android:padding="8dp"
-            android:textColorHint="#80212121"
+            android:textColorHint="@color/white"
             app:endIconMode="clear_text"
             app:endIconTint="@color/white"
             app:hintTextColor="@color/white"
@@ -98,8 +102,9 @@
                 android:id="@+id/txtDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat"
                 android:inputType="date"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -109,10 +114,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:background="@drawable/back"
+            android:background="@drawable/back2"
+            android:fontFamily="@font/montserrat"
             android:hint="Doc Name"
             android:padding="8dp"
-            android:textColorHint="#80212121"
+            android:textColorHint="@color/white"
             app:endIconMode="clear_text"
             app:endIconTint="@color/white"
             app:hintTextColor="@color/white"
@@ -124,7 +130,9 @@
                 android:id="@+id/txtDocName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/black" />
+                android:fontFamily="@font/montserrat"
+                android:inputType="text"
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -133,10 +141,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:background="@drawable/back"
+            android:background="@drawable/back2"
+            android:fontFamily="@font/montserrat"
             android:hint="End Date EX: 2021-01-01"
             android:padding="8dp"
-            android:textColorHint="#80212121"
+            android:textColorHint="@color/white"
             app:endIconMode="clear_text"
             app:endIconTint="@color/white"
             app:hintTextColor="@color/white"
@@ -148,8 +157,9 @@
                 android:id="@+id/txtEndDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat"
                 android:inputType="date"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -158,10 +168,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:background="@drawable/back"
+            android:background="@drawable/back2"
+            android:fontFamily="@font/montserrat"
             android:hint="Dosage"
             android:padding="8dp"
-            android:textColorHint="#80212121"
+            android:textColorHint="@color/white"
             app:endIconMode="clear_text"
             app:endIconTint="@color/white"
             app:hintTextColor="@color/white"
@@ -174,8 +185,9 @@
                 android:id="@+id/txtDosage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat"
                 android:inputType="number"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -183,18 +195,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Still"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Still:"
             android:textColor="@color/white"
             android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="@+id/txtDocNameContainer"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtDosageContainer" />
 
         <RadioGroup
             android:id="@+id/radioGroupStill"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:orientation="horizontal"
             android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtStill">
 
             <RadioButton
@@ -202,6 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/white"
+                android:fontFamily="@font/montserrat"
                 android:text="True"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -212,6 +230,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:buttonTint="@color/white"
+                android:fontFamily="@font/montserrat"
                 android:text="False"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -223,18 +242,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Chronic"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Chronic:"
             android:textColor="@color/white"
             android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="@+id/txtDosageContainer"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/radioGroupStill" />
 
         <RadioGroup
             android:id="@+id/radioGroupChronic"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:orientation="horizontal"
             android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtChronic">
 
             <RadioButton
@@ -242,6 +266,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/white"
+                android:fontFamily="@font/montserrat"
                 android:text="True"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -252,6 +277,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:buttonTint="@color/white"
+                android:fontFamily="@font/montserrat"
                 android:text="False"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -260,32 +286,44 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:padding="16dp"
+            android:id="@+id/txtUpload"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/montserrat"
+            android:paddingTop="10dp"
             android:text="Upload File"
+            android:textAlignment="center"
             android:textColor="#1433A4"
             android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnAdd"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/radioGroupChronic"
-            android:id="@+id/txtUpload"/>
+            app:layout_constraintTop_toBottomOf="@id/radioGroupChronic" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:backgroundTint="@color/white"
-            android:padding="20dp"
-            android:text="add"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/btn"
+            android:fontFamily="@font/montserrat"
+            android:text="Add"
             android:textAllCaps="false"
+            android:textColor="@color/main"
             android:textSize="20sp"
             app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/txtUpload" />
+            app:layout_constraintStart_toStartOf="parent" />
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/progress"
@@ -296,6 +334,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:visibility="gone"
+            app:cardCornerRadius="20dp"
             android:backgroundTint="@color/white">
 
             <com.airbnb.lottie.LottieAnimationView

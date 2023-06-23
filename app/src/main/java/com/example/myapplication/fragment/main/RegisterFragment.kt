@@ -60,11 +60,11 @@ class RegisterFragment : Fragment() {
             )
             viewModel.registerState.collect{
                 if (it.success!=null){
-                    Toast.makeText(requireContext(), it.success, Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), it.success, Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_register_to_login)
                 }
                 else if (it.error!=null){
-                    Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT).show()
                 }
                 binding.progress.isVisible = it.isLoading
 
@@ -75,7 +75,7 @@ class RegisterFragment : Fragment() {
 
 
     private fun handleError(message: String?) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
 }

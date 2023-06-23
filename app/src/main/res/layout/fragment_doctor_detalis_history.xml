@@ -38,6 +38,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/back"
             android:ems="10"
             android:gravity="start|top"
@@ -45,6 +46,7 @@
             android:inputType="textMultiLine"
             android:paddingStart="20dp"
             android:paddingTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView49"
@@ -98,7 +100,7 @@
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/doctor_details"
             android:textColor="#1433A4"
-            android:textSize="30sp"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView6"
             app:layout_constraintEnd_toEndOf="@+id/imageView6"
             app:layout_constraintStart_toEndOf="@+id/backButton"
@@ -259,36 +261,13 @@
             android:paddingBottom="5dp"
             android:text="@string/download_nimage"
             android:textAlignment="center"
-            android:textColor="#BBDEFB"
+            android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/generateQR"
             app:layout_constraintTop_toBottomOf="@+id/textView33"
             tools:ignore="TextContrastCheck" />
-
-        <Button
-            android:id="@+id/bookagain"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="65dp"
-            android:background="@drawable/btn"
-            android:backgroundTint="#FEFEFE"
-            android:fontFamily="@font/montserrat_semibold"
-
-            android:text="@string/book_again"
-            android:textAllCaps="false"
-            android:textColor="#1433A4"
-            android:textSize="20sp"
-            app:iconTint="#FEFEFE"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine3"
-            tools:ignore="VisualLintButtonSize" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

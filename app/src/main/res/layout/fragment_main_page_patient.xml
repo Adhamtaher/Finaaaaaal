@@ -18,28 +18,46 @@
             android:background="@drawable/background">
 
             <TextView
+                android:id="@+id/textView50"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/askbk"
+                android:fontFamily="@font/montserrat_semibold"
+                android:paddingStart="137dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="12dp"
+                android:text="Wanna make sure your drugs don't have any interaction?\nJust check the drug interactor."
+                android:textColor="#0F1498"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/textView10"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/analysis"
+                tools:ignore="TextSizeCheck" />
+
+            <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="24dp"
                 android:background="@drawable/recommendation"
                 android:fontFamily="@font/montserrat_semibold"
                 android:paddingStart="137dp"
                 android:paddingTop="12dp"
-                android:paddingBottom="12dp"
                 android:paddingEnd="8dp"
+                android:paddingBottom="12dp"
                 android:text="@string/not_feeling_good_we_are_here_to_help_just_take_the_medical_assessment"
                 android:textColor="#0F1498"
                 android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@+id/imageView10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/imageView18"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView50"
                 tools:ignore="TextSizeCheck" />
 
             <ImageView
@@ -55,6 +73,23 @@
                 app:layout_constraintStart_toStartOf="@+id/textView10"
                 app:layout_constraintTop_toTopOf="@+id/textView10"
                 app:layout_constraintVertical_bias="0.0"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/imageView26"
+                android:layout_width="130dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="225dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/med"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="@+id/textView50"
+                app:layout_constraintEnd_toEndOf="@+id/textView50"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView50"
+                app:layout_constraintTop_toTopOf="@+id/textView50"
                 tools:ignore="ContentDescription" />
 
             <ImageView
@@ -297,14 +332,14 @@
                 android:id="@+id/imageView10"
                 android:layout_width="375dp"
                 android:layout_height="178dp"
-                android:layout_marginBottom="60dp"
+                android:layout_marginTop="24dp"
                 android:adjustViewBounds="false"
                 android:cropToPadding="false"
                 android:scaleType="fitXY"
                 android:src="@drawable/norm"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10"
                 tools:ignore="ContentDescription,MissingConstraints,ImageContrastCheck" />
 
             <ImageView
@@ -319,23 +354,20 @@
                 app:layout_constraintVertical_bias="0.30"
                 tools:ignore="ContentDescription,MissingConstraints" />
 
-            <Button
+            <TextView
                 android:id="@+id/searchbtn"
-                android:layout_width="205dp"
-                android:layout_height="35dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/back"
-                android:drawableStart="@drawable/ic_search"
-                android:fontFamily="@font/montserrat"
-                android:iconifiedByDefault="false"
-                android:paddingStart="10dp"
-                android:queryBackground="@null"
-                android:queryHint="@string/search_for_medicine"
-                android:scaleType="fitCenter"
-                android:text="@string/search_for_medicine"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="19dp"
+                android:fontFamily="@font/montserrat_semibold_italic"
+                android:text="Pharmacy"
+                android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
+                android:textSize="28dp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView10"
                 app:layout_constraintStart_toEndOf="@+id/imageView11"
                 app:layout_constraintTop_toTopOf="@+id/imageView10"
                 tools:ignore="ContentDescription,ImageContrastCheck,MissingConstraints,RtlSymmetry,TouchTargetSizeCheck" />
@@ -358,17 +390,16 @@
                 android:id="@+id/ordermedicine"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="13dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/back"
                 android:fontFamily="@font/montserrat_light"
                 android:paddingTop="50dp"
                 android:paddingBottom="5dp"
-                android:text="@string/order_nmedicine"
+                android:text="@string/find_nmedicine"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="11sp"
-                app:layout_constraintStart_toEndOf="@+id/imageView11"
+                app:layout_constraintStart_toStartOf="@+id/searchbtn"
                 app:layout_constraintTop_toBottomOf="@+id/searchbtn"
                 tools:ignore="TextSizeCheck,TextContrastCheck" />
 
@@ -380,26 +411,27 @@
                 android:layout_marginTop="12dp"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/px"
-                app:layout_constraintEnd_toEndOf="@+id/sendPrescription"
-                app:layout_constraintStart_toStartOf="@+id/sendPrescription"
-                app:layout_constraintTop_toTopOf="@+id/sendPrescription"
+                android:src="@drawable/phone"
+                app:layout_constraintEnd_toEndOf="@+id/phonecall"
+                app:layout_constraintStart_toStartOf="@+id/phonecall"
+                app:layout_constraintTop_toTopOf="@+id/phonecall"
                 tools:ignore="ContentDescription,MissingConstraints,ImageContrastCheck" />
 
             <TextView
-                android:id="@+id/sendPrescription"
+                android:id="@+id/phonecall"
                 android:layout_width="85dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/back"
                 android:fontFamily="@font/montserrat_light"
                 android:paddingTop="50dp"
                 android:paddingBottom="5dp"
-                android:text="@string/send_prescription"
+                android:text="@string/pharmacy_assistant"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/searchbtn"
                 app:layout_constraintStart_toEndOf="@+id/ordermedicine"
                 app:layout_constraintTop_toBottomOf="@+id/searchbtn"
                 tools:ignore="TextSizeCheck,TextContrastCheck" />
@@ -447,46 +479,6 @@
                 app:layout_constraintStart_toEndOf="@+id/clinicText4"
                 app:layout_constraintStart_toStartOf="@+id/firstaid"
                 tools:ignore="MissingConstraints,TextSizeCheck" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:background="@drawable/askbk"
-                android:fontFamily="@font/montserrat_semibold"
-                android:paddingStart="30dp"
-                android:paddingTop="8dp"
-                android:paddingEnd="30dp"
-                android:paddingBottom="32dp"
-                android:text="@string/ask"
-                android:textColor="@color/main"
-                android:textSize="19sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView10"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/analysis"
-                tools:ignore="TextSizeCheck" />
-
-            <Button
-                android:id="@+id/ask"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="28dp"
-                android:layout_marginBottom="4dp"
-                android:background="@drawable/bluebtn"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="@string/ask_now"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                app:iconTint="@color/main"
-                app:layout_constraintBottom_toBottomOf="@+id/textView5"
-                app:layout_constraintEnd_toEndOf="@+id/textView5"
-                tools:layout_constraintRight_creator="1"
-                tools:layout_constraintTop_creator="1" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

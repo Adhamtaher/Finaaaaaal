@@ -19,8 +19,6 @@ import com.example.myapplication.databinding.FragmentDiagnosisBinding
 import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.DoctorInfo1
 import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.Filter
 import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.MedicalRecordViewModel
-import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.lab.LabFragmentDirections
-import com.example.myapplication.fragment.patient.medicalhistory.radiation.RadiationHistoryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch

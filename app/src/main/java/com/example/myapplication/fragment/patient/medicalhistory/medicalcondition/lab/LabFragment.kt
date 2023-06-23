@@ -60,6 +60,9 @@ lateinit var binding: FragmentLabBinding
         binding.backButton.setOnClickListener {
             activity?.onBackPressed()
         }
+        binding.upcoming4.setOnClickListener {
+            findNavController().navigate(R.id.action_labFragment_to_analysisActivity)
+        }
     binding.btnAdd.setOnClickListener {
         val action=LabFragmentDirections.actionLabFragmentToMedicalRecordAddFragment(binding.txtTitle.text.toString())
         findNavController().navigate(action)
@@ -100,7 +103,7 @@ lateinit var binding: FragmentLabBinding
     }
 
     override fun onItemClick(position: Int) {
-        val action=LabFragmentDirections.actionLabFragmentToRadiationResult(binding.txtTitle.text.toString() ,adapter.currentList[position].id.toString())
+        val action=LabFragmentDirections.actionLabFragmentToAnalysisResult(binding.txtTitle.text.toString() ,adapter.currentList[position].id.toString())
         findNavController().navigate(action)
     }
 

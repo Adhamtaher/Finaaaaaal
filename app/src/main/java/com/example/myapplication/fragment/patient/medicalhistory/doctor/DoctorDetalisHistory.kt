@@ -27,7 +27,7 @@ class DoctorDetalisHistory : Fragment() {
     ): View? {
         binding = FragmentDoctorDetalisHistoryBinding.inflate(inflater, container, false)
         binding.generateQR.setOnClickListener {
-            val textToEncode = "Hello, World!"
+            val textToEncode = "AUGMENTIN 1GM \nPANADOL COLD & FLU \nCOMETREX"
             val qrCodeSize = 512
 
             // Generate QR code bitmap
@@ -70,9 +70,6 @@ class DoctorDetalisHistory : Fragment() {
         }
         binding.backButton.setOnClickListener {
             activity?.onBackPressed()
-        }
-        binding.bookagain.setOnClickListener {
-            findNavController().navigate(R.id.action_doctorDetalisHistory_to_booking)
         }
 
         return binding.root

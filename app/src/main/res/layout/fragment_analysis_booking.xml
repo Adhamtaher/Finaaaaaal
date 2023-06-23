@@ -18,7 +18,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:visibility="gone"
-            tools:visibility="gone"
+            app:cardCornerRadius="20dp"
             android:backgroundTint="@color/white"
             android:layout_centerInParent="true"
             >
@@ -26,11 +26,11 @@
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="centerCrop"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 app:lottie_rawRes="@raw/loading"
-                app:lottie_speed="1.5"
-                android:scaleType="centerCrop"/>
+                app:lottie_speed="1.5" />
         </androidx.cardview.widget.CardView>
 
 
@@ -42,6 +42,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/btn"
+            app:backgroundTint="@null"
             android:fontFamily="@font/montserrat"
             android:text="@string/select_the_date"
             android:textAllCaps="false"
@@ -86,17 +87,16 @@
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="0dp"
-            android:layout_height="66dp"
-            android:layout_marginStart="97dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="16dp"
             android:buttonTint="@color/white"
             android:fontFamily="@font/montserrat"
             android:text="@string/i_am_booking_on_behalf_of_another_person"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView21"
             app:layout_constraintTop_toBottomOf="@+id/spinner"
             tools:ignore="TextSizeCheck,VisualLintButtonSize" />
 
@@ -202,7 +202,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="65dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/btn"
             android:backgroundTint="#FEFEFE"
             android:fontFamily="@font/montserrat_semibold"
@@ -250,7 +250,7 @@
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/booking"
             android:textColor="#1433A4"
-            android:textSize="34sp"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.35"
@@ -273,18 +273,19 @@
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:background="@drawable/back"
-            android:fontFamily="@font/montserrat_semibold"
+            android:dropDownSelector="@null"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
+            android:paddingStart="30dp"
+            android:popupBackground="@drawable/btn"
             android:text="@string/typeana1"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
+            android:textSize="28sp"
+            android:theme="@style/SpinnerStyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />

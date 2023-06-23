@@ -6,5 +6,5 @@ data class LoginAdded(
     @SerializedName("email")
     val email: String?,
     @SerializedName("password")
-    val password: List<String?>?
+    val password: String?
 )

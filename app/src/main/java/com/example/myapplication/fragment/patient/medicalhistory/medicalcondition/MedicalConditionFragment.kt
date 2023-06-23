@@ -18,7 +18,7 @@ class MedicalConditionFragment : Fragment() {
         binding = FragmentMedicalConditionBinding.inflate(inflater, container, false)
 
         binding.backButton.setOnClickListener {
-            findNavController().navigate(R.id.action_medicalCondition_to_medicalHistory)
+            findNavController().navigate(R.id.action_medicalCondition_to_mainPagePatient2)
         }
         binding.diagnosis.setOnClickListener {
             findNavController().navigate(R.id.action_medicalCondition_to_diagnosis2)

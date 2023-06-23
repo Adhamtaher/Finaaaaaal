@@ -65,7 +65,7 @@
     <string name="welcome_to">Welcome to,</string>
     <string name="create_account">Create Account</string>
     <string name="exisiting_account">Exisiting Account</string>
-    <string name="waiting_time_45_minutes">Waiting time: 45 minutes</string>
+    <string name="waiting_time_45_minutes">Waiting time: 45 min.</string>
     <string name="dr1">Dr.Khaled Selim</string>
     <string name="dr2">Dr.Mohamed Ashraf</string>
     <string name="dr3">Dr.Samir Aly</string>
@@ -209,7 +209,7 @@
     <string name="analysis_date">Analysis date:</string>
     <string name="radiation_center_name">Radiation center name:</string>
     <string name="analysis_details">Analysis details</string>
-    <string name="analysis_name">Analysis type:</string>
+    <string name="analysis_name">Analysis name:</string>
     <string name="radiation_result_image">Radiation result image:</string>
     <string name="_400egp">400EGP</string>
     <string name="referred_by_doctor">Referred by doctor</string>

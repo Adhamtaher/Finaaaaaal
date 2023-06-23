@@ -40,7 +40,7 @@ class AnalysisActivity : Fragment(), AnalysisActivityAdapter.MyClickListener, An
             findNavController().navigate(R.id.action_analysisActivity_to_activity)
         }
         binding.history.setOnClickListener {
-            findNavController().navigate(R.id.action_analysisActivity_to_analysisHistory)
+            findNavController().navigate(R.id.action_analysisActivity_to_labFragment)
         }
         return binding.root
     }

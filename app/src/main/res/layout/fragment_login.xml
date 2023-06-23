@@ -11,10 +11,9 @@
         android:id="@+id/imageView14"
         android:layout_width="330dp"
         android:layout_height="95dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:scaleType="centerCrop"
         android:src="@drawable/hospi"
-        app:layout_constraintBottom_toTopOf="@+id/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +49,7 @@
         android:paddingStart="20dp"
         android:selectAllOnFocus="true"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -72,6 +72,7 @@
         android:paddingStart="20dp"
         android:selectAllOnFocus="true"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/checkbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -100,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/btn"
@@ -135,7 +136,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="22dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/don_t_have_an_account"
         android:textColor="@color/white"
@@ -171,16 +172,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:visibility="gone"
-        android:backgroundTint="@color/white">
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/white"
+        android:layout_centerInParent="true"
+        >
 
         <com.airbnb.lottie.LottieAnimationView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:scaleType="centerCrop"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
             app:lottie_rawRes="@raw/loading"
-            app:lottie_speed="1.5"
-            android:scaleType="centerCrop"/>
+            app:lottie_speed="1.5" />
     </androidx.cardview.widget.CardView>
 
 

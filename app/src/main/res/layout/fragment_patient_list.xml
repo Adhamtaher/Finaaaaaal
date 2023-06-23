@@ -129,7 +129,7 @@
         android:id="@+id/cancel"
         android:layout_width="130dp"
         android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/bluebtn"
         android:fontFamily="@font/montserrat_medium"
@@ -137,15 +137,18 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="14sp"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/check" />
 
     <Button
         android:id="@+id/check"
-        android:layout_width="210dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/bluebtn"
         android:fontFamily="@font/montserrat_medium"
@@ -153,8 +156,10 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="12sp"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cancel"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck,TextSizeCheck" />
 

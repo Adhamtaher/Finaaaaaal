@@ -24,14 +24,17 @@
 
     <TextView
         android:id="@+id/MedicineName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
         android:fontFamily="@font/montserrat_medium"
         android:text="@string/med1"
         android:textColor="@color/main"
         android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/MedicineImage"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -68,7 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:numStars="5"
         android:progress="5"
         android:progressTint="#FEC007"
@@ -104,30 +107,12 @@
         app:tint="@color/main"
         tools:ignore="ContentDescription" />
 
-    <Button
-        android:id="@+id/addtocart"
-        android:layout_width="125dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/bluebtn"
-        android:fontFamily="@font/montserrat_medium"
-        android:text="@string/add_to_cart"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        tools:ignore="TextSizeCheck" />
-
     <TextView
         android:id="@+id/button3"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/green"
         android:fontFamily="@font/montserrat_medium"
@@ -137,8 +122,7 @@
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/addtocart"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextSizeCheck,TextContrastCheck" />
 

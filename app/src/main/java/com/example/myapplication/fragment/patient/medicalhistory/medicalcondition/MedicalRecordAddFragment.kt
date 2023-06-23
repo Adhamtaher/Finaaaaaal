@@ -142,7 +142,7 @@ class MedicalRecordAddFragment : Fragment() {
                     )
                 }
 
-                "Lab" -> {
+                "Lab analysis" -> {
                     viewModel.postMedicalRecord(
                         MedicalRecordInfo(
                             type = "lab",
@@ -154,7 +154,7 @@ class MedicalRecordAddFragment : Fragment() {
                     )
                 }
 
-                "Rad" -> {
+                "Radiations" -> {
                     viewModel.postMedicalRecord(
                         MedicalRecordInfo(
                             type = "rad",
@@ -193,7 +193,7 @@ class MedicalRecordAddFragment : Fragment() {
 
                 }
 
-                "Operation" -> {
+                "Surgeries" -> {
                     viewModel.postMedicalRecord(
                         MedicalRecordInfo(
                             type = "operation",
@@ -239,7 +239,7 @@ class MedicalRecordAddFragment : Fragment() {
                 binding.radioGroupChronic.visibility = View.GONE
             }
 
-            "Operation" -> {
+            "Surgeries" -> {
                 binding.txtDosageContainer.visibility = View.GONE
                 binding.txtChronic.visibility = View.GONE
                 binding.radioGroupChronic.visibility = View.GONE
@@ -248,7 +248,7 @@ class MedicalRecordAddFragment : Fragment() {
                 binding.radioGroupStill.visibility = View.GONE
             }
 
-            "Lab" -> {
+            "Lab analysis" -> {
                 binding.txtDosageContainer.visibility = View.GONE
                 binding.txtChronic.visibility = View.GONE
                 binding.radioGroupChronic.visibility = View.GONE
@@ -257,7 +257,7 @@ class MedicalRecordAddFragment : Fragment() {
                 binding.radioGroupStill.visibility = View.GONE
             }
 
-            "Rad" -> {
+            "Radiations" -> {
                 binding.txtDosageContainer.visibility = View.GONE
                 binding.txtChronic.visibility = View.GONE
                 binding.radioGroupChronic.visibility = View.GONE

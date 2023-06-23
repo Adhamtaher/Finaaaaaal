@@ -64,14 +64,14 @@ class LoginFragment : Fragment() {
             )
             viewModel.loginState.collect{
                 if (it.success!=null){
-                    Toast.makeText(requireContext(), it.success, Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), it.success, Toast.LENGTH_SHORT).show()
                     saveToken(Constants.userToken, it.userInfo?.token.toString())
                     saveUserId(Constants.userId, it.userInfo?.user?.id.toString())
                     startActivity(Intent(requireContext(), MainPagePatient::class.java))
                     Log.e( "collectState: ",it.success.toString() )
                 }
                  if (it.error!=null){
-                    Toast.makeText(requireContext(), it.error, Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), it.error, Toast.LENGTH_SHORT).show()
                 }
                 binding.progress.isVisible = it.isLoading
 

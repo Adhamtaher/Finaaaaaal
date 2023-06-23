@@ -13,10 +13,7 @@ class MedicineAdapter(private var medicineList: ArrayList<MedicineList>, val lis
 
     inner class MyView(val itemBinding: FragmentMedicineListBinding): RecyclerView.ViewHolder(itemBinding.root){
         init {
-            itemBinding.addtocart.setOnClickListener {
-                val position = adapterPosition
-                listener.onClick(position)
-            }
+
         }
     }
 

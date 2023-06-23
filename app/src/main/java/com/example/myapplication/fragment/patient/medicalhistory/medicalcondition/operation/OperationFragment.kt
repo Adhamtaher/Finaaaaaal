@@ -11,14 +11,12 @@ import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.R
 import com.example.myapplication.common.Constants
 import com.example.myapplication.common.Constants.Companion.dataStore
 import com.example.myapplication.databinding.FragmentOperationBinding
 import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.DoctorInfo1
 import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.Filter
 import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.MedicalRecordViewModel
-import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.lab.LabFragmentDirections
 import com.example.myapplication.fragment.patient.medicalhistory.radiation.RadiationHistoryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.first

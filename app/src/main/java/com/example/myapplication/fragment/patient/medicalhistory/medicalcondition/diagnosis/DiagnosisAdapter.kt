@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.FragmentDiagnosisListBinding
 import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.RecordsItem
-import com.example.myapplication.fragment.patient.medicalhistory.radiation.RadiationHistoryAdapter
 import java.text.SimpleDateFormat
 import java.util.Locale
 

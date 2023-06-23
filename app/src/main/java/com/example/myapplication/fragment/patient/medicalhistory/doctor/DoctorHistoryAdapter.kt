@@ -5,19 +5,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.databinding.FragmentDoctorHistoryListBinding
 
-class DoctorHistoryAdapter(private val doctorsHistoryList: ArrayList<DoctorHistoryList>, val listener: DoctorHistoryAdapter.MyClickListener, val onlistener: DoctorHistoryAdapter.MyListener) :
+class DoctorHistoryAdapter(private val doctorsHistoryList: ArrayList<DoctorHistoryList>, val listener: DoctorHistoryAdapter.MyClickListener) :
     RecyclerView.Adapter<DoctorHistoryAdapter.MyView>() {
 
     inner class MyView(val itemBinding: FragmentDoctorHistoryListBinding): RecyclerView.ViewHolder(itemBinding.root){
         init {
-            itemBinding.bookagain.setOnClickListener {
+            itemBinding.details.setOnClickListener {
                 val position = adapterPosition
                 listener.onClick(position)
             }
-            itemBinding.details.setOnClickListener {
-                val position = adapterPosition
-                onlistener.onClik(position)
-            }
+
         }
     }
 
@@ -38,8 +35,5 @@ class DoctorHistoryAdapter(private val doctorsHistoryList: ArrayList<DoctorHisto
     }
     interface MyClickListener{
         fun onClick(position: Int)
-    }
-    interface MyListener{
-        fun onClik(position: Int)
     }
 }

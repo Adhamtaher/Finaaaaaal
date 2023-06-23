@@ -43,10 +43,6 @@ class MainPageDoctor : Fragment() {
         binding.ordermedicine.setOnClickListener {
             findNavController().navigate(R.id.action_mainPageDoctor_to_medicineTypes)
         }
-        binding.searchbtn.setOnClickListener {
-            findNavController().navigate(R.id.action_mainPageDoctor_to_medicineTypes)
-        }
-
         val phoneNumber = "01011498307"
         val dialIntent = Intent(Intent.ACTION_DIAL)
         dialIntent.data = Uri.parse("tel:$phoneNumber")

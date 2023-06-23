@@ -34,7 +34,7 @@
             android:fontFamily="@font/montserrat_semibold"
             android:text="@string/radiations"
             android:textColor="#1433A4"
-            android:textSize="34sp"
+            android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.35"
@@ -49,7 +49,7 @@
             android:fontFamily="@font/montserrat_semibold"
             android:text="Most popular radiations:"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="@+id/searchview"
             app:layout_constraintTop_toBottomOf="@+id/searchview" />
 
@@ -73,6 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

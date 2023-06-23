@@ -39,9 +39,9 @@ class DoctorsAdapter(private val args :String) :
     override fun onBindViewHolder(holder: MyView, position: Int) {
 
         holder.itemBinding.doctorName.text = getItem(position).name
-        holder.itemBinding.nextvisit.text = "Waiting time: ${position +45}minutes"
+        holder.itemBinding.nextvisit.text = "Waiting time: ${45} min."
         holder.itemBinding.fees.text = getItem(position).doctorInfo?.fees?.examin.toString()
-        holder.itemBinding.speciality.text = "Availability ${getItem(position).doctorInfo?.available.toString()}"
+        holder.itemBinding.speciality.text = "Availability: ${getItem(position).doctorInfo?.available.toString()}"
         Glide.with(holder.itemBinding.root).load(getItem(position).image).placeholder(R.drawable.smilingdoctor).into(holder.itemBinding.doctorImage)
 
         holder.itemBinding.book.setOnClickListener {

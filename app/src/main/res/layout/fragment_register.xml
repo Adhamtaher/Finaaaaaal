@@ -231,6 +231,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:visibility="gone"
+            app:cardCornerRadius="20dp"
             android:backgroundTint="@color/white">
 
             <com.airbnb.lottie.LottieAnimationView

@@ -47,7 +47,7 @@ data class User(
 	val createdAt: String? = null,
 
 	@field:SerializedName("password")
-	val password: List<String?>? = null,
+	val password: String? = null,
 
 	@field:SerializedName("phone")
 	val phone: String? = null,

@@ -18,10 +18,8 @@ import com.example.myapplication.databinding.FragmentRadBinding
 import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.DoctorInfo1
 import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.Filter
 import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.MedicalRecordViewModel
-import com.example.myapplication.fragment.patient.medicalhistory.medicalcondition.lab.LabFragmentDirections
 import com.example.myapplication.fragment.patient.medicalhistory.radiation.RadiationHistoryAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
@@ -51,6 +49,9 @@ class RadFragment : Fragment(),RadiationHistoryAdapter.OnItemClickListener {
         adapter= RadiationHistoryAdapter(this)
         binding.backButton.setOnClickListener {
             activity?.onBackPressed()
+        }
+        binding.upcoming2.setOnClickListener {
+            findNavController().navigate(R.id.action_radFragment_to_radiationActivity)
         }
         binding.btnAdd.setOnClickListener {
             val action =

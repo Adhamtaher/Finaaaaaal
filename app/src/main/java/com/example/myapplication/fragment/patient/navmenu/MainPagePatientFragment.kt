@@ -1,6 +1,7 @@
 package com.example.myapplication.fragment.patient.navmenu
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -56,17 +57,27 @@ class MainPagePatientFragment : Fragment() {
         binding.examinatons.setOnClickListener {
             findNavController().navigate(R.id.action_mainPagePatient_to_radiations)
         }
-        binding.ask.setOnClickListener {
-            findNavController().navigate(R.id.action_mainPagePatient_to_speciality)
+        binding.textView50.setOnClickListener {
+            val url = "https://hospii.vercel.app/patient/drugsInteraction"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
         }
         binding.ordermedicine.setOnClickListener {
             findNavController().navigate(R.id.action_mainPagePatient_to_medicineTypes)
         }
-        binding.sendPrescription.setOnClickListener {
-            pickImageFromGallery()
+        binding.textView10.setOnClickListener {
+            val url = "https://hospii.vercel.app/patient/symptomChecker"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
         }
-        binding.searchbtn.setOnClickListener {
-            findNavController().navigate(R.id.action_mainPagePatient_to_medicineTypes)
+        val phoneNumber = "01011498307"
+        val dialIntent = Intent(Intent.ACTION_DIAL)
+        dialIntent.data = Uri.parse("tel:$phoneNumber")
+
+        binding.phonecall.setOnClickListener {
+            startActivity(dialIntent)
         }
         binding.firstaid.setOnClickListener {
             findNavController().navigate(R.id.action_mainPagePatient_to_firstAid)

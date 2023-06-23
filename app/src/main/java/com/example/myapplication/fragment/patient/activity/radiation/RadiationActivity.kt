@@ -40,7 +40,7 @@ class RadiationActivity : Fragment(), RadiationActivityAdapter.MyClickListener, 
             findNavController().navigate(R.id.action_radiationActivity_to_activity)
         }
         binding.history.setOnClickListener {
-            findNavController().navigate(R.id.action_radiationActivity_to_radiationHistory)
+            findNavController().navigate(R.id.action_radiationActivity_to_radFragment)
         }
         return binding.root
     }

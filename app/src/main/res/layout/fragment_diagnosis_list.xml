@@ -126,38 +126,20 @@
         tools:ignore="ContentDescription" />
 
     <Button
-        android:id="@+id/cancel"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/bluebtn"
-        android:fontFamily="@font/montserrat_medium"
-        android:text="@string/delete"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:backgroundTint="@null"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/details" />
-
-    <Button
         android:id="@+id/details"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/bluebtn"
         android:fontFamily="@font/montserrat_medium"
         android:text="@string/details"
-        app:backgroundTint="@null"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/cancel"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextContrastCheck,TextSizeCheck" />
 

@@ -11,7 +11,7 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.FragmentDoctorHistoryBinding
 import java.util.ArrayList
 
-class DoctorHistory : Fragment(), DoctorHistoryAdapter.MyClickListener, DoctorHistoryAdapter.MyListener {
+class DoctorHistory : Fragment(), DoctorHistoryAdapter.MyClickListener {
 
     lateinit var adapter: DoctorHistoryAdapter
     lateinit var doctorHistoryList: ArrayList<DoctorHistoryList>
@@ -32,11 +32,11 @@ class DoctorHistory : Fragment(), DoctorHistoryAdapter.MyClickListener, DoctorHi
         val layoutManager = LinearLayoutManager(context)
         binding.recyclerView.layoutManager = layoutManager
         binding.recyclerView.setHasFixedSize(true)
-        adapter = DoctorHistoryAdapter(doctorHistoryList, this@DoctorHistory, this@DoctorHistory)
+        adapter = DoctorHistoryAdapter(doctorHistoryList, this@DoctorHistory)
         binding.recyclerView.adapter = adapter
 
         binding.backButton.setOnClickListener {
-            findNavController().navigate(R.id.action_doctorHistory_to_medicalHistory)
+            activity?.onBackPressed()
         }
         binding.upcoming.setOnClickListener {
             findNavController().navigate(R.id.action_doctorHistory_to_doctorActivity)
@@ -71,12 +71,6 @@ class DoctorHistory : Fragment(), DoctorHistoryAdapter.MyClickListener, DoctorHi
         }
     }
     override fun onClick(position: Int) {
-        when(position){
-            0-> findNavController().navigate(R.id.action_doctorHistory_to_booking)
-            1-> findNavController().navigate(R.id.action_doctorHistory_to_booking)
-        }
-    }
-    override fun onClik(position: Int) {
         when(position){
             0-> findNavController().navigate(R.id.action_doctorHistory_to_doctorDetalisHistory)
             1-> findNavController().navigate(R.id.action_doctorHistory_to_doctorDetalisHistory)

@@ -113,7 +113,7 @@
         android:fontFamily="@font/montserrat_semibold"
         android:text="@string/analysis_result"
         android:textColor="#1433A4"
-        android:textSize="30sp"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/backButton"

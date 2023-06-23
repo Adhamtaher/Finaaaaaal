@@ -53,7 +53,7 @@ class DiagnosisDetails : Fragment() {
         binding = FragmentDiagnosisDetailsBinding.inflate(inflater, container, false)
 
         binding.imageView1.setOnClickListener {
-            val textToEncode = "Hello, World!"
+            val textToEncode = "AUGMENTIN 1GM \nPANADOL COLD & FLU \nCOMETREX"
             val qrCodeSize = 512
 
             // Generate QR code bitmap

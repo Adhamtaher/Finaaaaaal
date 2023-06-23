@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
+import com.example.myapplication.databinding.FragmentFirstAidListBinding
 import com.example.myapplication.databinding.FragmentRadiationListBinding
 import com.example.myapplication.databinding.FragmentSpecialtyListBinding
 import com.example.myapplication.fragment.patient.mainpage.doctors.doctors.DoctorItem
@@ -24,7 +25,7 @@ class FirstAidAdapter :
             return oldItem.id == newItem.id
         }
     }
-    inner class MyView(val itemBinding: FragmentRadiationListBinding): RecyclerView.ViewHolder(itemBinding.root){
+    inner class MyView(val itemBinding: FragmentFirstAidListBinding): RecyclerView.ViewHolder(itemBinding.root){
 
 
 
@@ -37,7 +38,7 @@ class FirstAidAdapter :
 //    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyView {
-        return MyView(FragmentRadiationListBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return MyView(FragmentFirstAidListBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
 
