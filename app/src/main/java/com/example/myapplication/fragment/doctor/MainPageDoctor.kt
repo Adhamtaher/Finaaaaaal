@@ -38,7 +38,7 @@ class MainPageDoctor : Fragment() {
             findNavController().navigate(R.id.action_mainPageDoctor_to_patients2)
         }
         binding.surgeries.setOnClickListener {
-            findNavController().navigate(R.id.action_mainPageDoctor_to_surgeriesTypes)
+            findNavController().navigate(R.id.action_mainPageDoctor_to_surgeries2)
         }
         binding.ordermedicine.setOnClickListener {
             findNavController().navigate(R.id.action_mainPageDoctor_to_medicineTypes)

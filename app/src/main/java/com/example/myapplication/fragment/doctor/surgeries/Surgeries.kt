@@ -50,7 +50,7 @@ class Surgeries : Fragment(), SurgeriesAdapter.MyClickListener, SurgeriesAdapter
 
 
         binding.backButton.setOnClickListener {
-            findNavController().navigate(R.id.action_surgeries_to_surgeriesTypes)
+            findNavController().navigate(R.id.action_surgeries_to_mainPageDoctor)
         }
 
         return binding.root

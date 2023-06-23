@@ -37,8 +37,8 @@
             android:id="@+id/action_mainPageDoctor_to_patients2"
             app:destination="@id/patients2" />
         <action
-            android:id="@+id/action_mainPageDoctor_to_surgeriesTypes"
-            app:destination="@id/surgeriesTypes" />
+            android:id="@+id/action_mainPageDoctor_to_surgeries2"
+            app:destination="@id/surgeries" />
     </fragment>
     <fragment
         android:id="@+id/prescription"
@@ -79,40 +79,13 @@
         android:label="fragment_surgeriestypes"
         tools:layout="@layout/fragment_surgeries" >
         <action
-            android:id="@+id/action_surgeries_to_surgeriesTypes"
-            app:destination="@id/surgeriesTypes" />
-        <action
             android:id="@+id/action_surgeries_to_patientDetails"
             app:destination="@id/patientDetails" />
         <action
             android:id="@+id/action_surgeries_to_mainPageDoctor"
             app:destination="@id/mainPageDoctor" />
-    </fragment>
-    <fragment
-        android:id="@+id/surgeriesTypes"
-        android:name="com.example.myapplication.fragment.doctor.surgeries.SurgeriesTypes"
-        android:label="fragment_surgeries_types"
-        tools:layout="@layout/fragment_surgeries_types" >
         <action
-            android:id="@+id/action_surgeriesTypes_to_surgeries"
-            app:destination="@id/surgeries" />
-        <action
-            android:id="@+id/action_surgeriesTypes_to_mainPageDoctor"
-            app:destination="@id/mainPageDoctor" />
-        <action
-            android:id="@+id/action_surgeriesTypes_to_reserveSurgeries"
-            app:destination="@id/reserveSurgeries" />
-    </fragment>
-    <fragment
-        android:id="@+id/reserveSurgeries"
-        android:name="com.example.myapplication.fragment.doctor.surgeries.ReserveSurgeries"
-        android:label="fragment_reserve_surgeries"
-        tools:layout="@layout/fragment_reserve_surgeries" >
-        <action
-            android:id="@+id/action_reserveSurgeries_to_surgeriesTypes"
-            app:destination="@id/surgeriesTypes" />
-        <action
-            android:id="@+id/action_reserveSurgeries_to_mainPageDoctor"
+            android:id="@+id/action_surgeries_to_mainPageDoctor3"
             app:destination="@id/mainPageDoctor" />
     </fragment>
     <fragment
