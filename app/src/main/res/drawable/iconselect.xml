@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:drawable="@drawable/round_home_24" android:state_checked="true" android:id="@+id/my_item_1_selected" />
+        <item android:drawable="@drawable/activitychecked" android:state_checked="true" android:id="@+id/my_item_2_selected" />
+        <item android:drawable="@drawable/medicalhistorychecked" android:state_checked="true" android:id="@+id/my_item_3_selected" />
+        <item android:drawable="@drawable/ic_more" android:state_checked="true" android:id="@+id/my_item_4_selected" />
+        <item android:drawable="@drawable/outline_home_24" android:id="@+id/my_item_1_id" />
+        <item android:drawable="@drawable/activity" android:id="@+id/my_item_2_id" />
+        <item android:drawable="@drawable/medicalhistory" android:id="@+id/my_item_3_id" />
+        <item android:drawable="@drawable/outline_menu_open_24" android:id="@+id/my_item_4_id" />
+
+
+</selector>
