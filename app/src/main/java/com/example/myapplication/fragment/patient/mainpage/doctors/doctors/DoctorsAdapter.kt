@@ -42,7 +42,7 @@ class DoctorsAdapter(private val args :String) :
         holder.itemBinding.nextvisit.text = "Waiting time: ${45} min."
         holder.itemBinding.fees.text = getItem(position).doctorInfo?.fees?.examin.toString()
         holder.itemBinding.speciality.text = "Availability: ${getItem(position).doctorInfo?.available.toString()}"
-        Glide.with(holder.itemBinding.root).load(getItem(position).image).placeholder(R.drawable.smilingdoctor).into(holder.itemBinding.doctorImage)
+        Glide.with(holder.itemBinding.root).load(getItem(position).image).placeholder(R.drawable.smilingdoctor1).into(holder.itemBinding.doctorImage)
 
         holder.itemBinding.book.setOnClickListener {
 

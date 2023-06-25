@@ -101,7 +101,7 @@
             app:layout_constraintStart_toStartOf="@+id/textView29"
             app:layout_constraintTop_toBottomOf="@+id/textView50" />
 
-        <EditText
+        <TextView
             android:id="@+id/phonenumber"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -109,14 +109,14 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/back"
-            android:editable="false"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="@string/phone"
-            android:inputType="none"
-            android:paddingStart="20dp"
-            android:textColor="#FFFDFD"
-            android:textColorHint="@color/white"
+            android:text="@string/phone"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toBottomOf="@+id/textView22"
@@ -136,7 +136,7 @@
             app:layout_constraintStart_toStartOf="@+id/username"
             app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
-        <EditText
+        <TextView
             android:id="@+id/username"
             android:layout_width="0dp"
             android:layout_height="50dp"
@@ -144,14 +144,14 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:background="@drawable/back"
-            android:editable="false"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
             android:ems="10"
             android:fontFamily="@font/montserrat"
-            android:hint="@string/name"
-            android:inputType="none"
-            android:paddingStart="20dp"
-            android:textColor="#FFFDFD"
-            android:textColorHint="@color/white"
+            android:text="@string/name"
+            android:textColor="@color/white"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toBottomOf="@+id/textView21"

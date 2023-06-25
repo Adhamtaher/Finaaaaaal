@@ -21,7 +21,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/doctorName"
-        app:srcCompat="@drawable/smilingdoctor"
+        app:srcCompat="@drawable/smilingdoctor1"
         tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <TextView

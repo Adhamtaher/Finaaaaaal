@@ -47,20 +47,16 @@ class AnalysisActivity : Fragment(), AnalysisActivityAdapter.MyClickListener, An
     private fun dataIntialize() {
         analysisActivityList = arrayListOf<AnlaysisActivityList>()
         imageId = arrayOf(
-            R.drawable.blood2,
-            R.drawable.urinalysis2
+            R.drawable.blood2
         )
         heading = arrayOf(
-            getString(R.string.typeana1),
-            getString(R.string.typeana2)
+            getString(R.string.typeana1)
         )
         time = arrayOf(
-            getString(R.string.date1),
-            getString(R.string.date2)
+            getString(R.string.date1)
         )
         fee = arrayOf(
-            getString(R.string.fees1),
-            getString(R.string.fees2)
+            getString(R.string.fees3)
         )
         for (i in imageId.indices) {
             val analysisActivity = AnlaysisActivityList(imageId[i], heading[i], time[i], fee[i])

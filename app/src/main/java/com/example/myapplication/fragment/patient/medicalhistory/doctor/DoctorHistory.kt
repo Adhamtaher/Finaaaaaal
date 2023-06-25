@@ -46,24 +46,19 @@ class DoctorHistory : Fragment(), DoctorHistoryAdapter.MyClickListener {
     private fun dataIntialize() {
         doctorHistoryList = arrayListOf<DoctorHistoryList>()
         imageId = arrayOf(
-            R.drawable.smilingdoctor,
             R.drawable.smilingdoctor
         )
         heading = arrayOf(
-            getString(R.string.dr1),
-            getString(R.string.dr2)
+            getString(R.string.dr1)
         )
         time = arrayOf(
-            getString(R.string.last_visit_1),
-            getString(R.string.last_visit_2)
+            getString(R.string.last_visit_1)
         )
         fee = arrayOf(
-            getString(R.string.fees1),
-            getString(R.string.fees2)
+            getString(R.string.fees1)
         )
         spec = arrayOf(
-            getString(R.string.specialty1),
-            getString(R.string.specialty2)
+            getString(R.string.specialty1)
         )
         for (i in imageId.indices) {
             val doctorsHistory = DoctorHistoryList(imageId[i], heading[i], time[i], fee[i], spec[i])

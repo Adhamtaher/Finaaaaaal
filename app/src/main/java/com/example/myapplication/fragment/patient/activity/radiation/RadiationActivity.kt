@@ -47,16 +47,13 @@ class RadiationActivity : Fragment(), RadiationActivityAdapter.MyClickListener, 
     private fun dataIntialize() {
         radiationActivityList = arrayListOf<RadiationActivityList>()
         imageId = arrayOf(
-            R.drawable.bone2,
             R.drawable.chest2
         )
         heading = arrayOf(
-            getString(R.string.typerad1),
             getString(R.string.typerad2)
         )
         time = arrayOf(
-            getString(R.string.date1),
-            getString(R.string.date2)
+            getString(R.string.date1)
         )
         fee = arrayOf(
             getString(R.string.fees1),

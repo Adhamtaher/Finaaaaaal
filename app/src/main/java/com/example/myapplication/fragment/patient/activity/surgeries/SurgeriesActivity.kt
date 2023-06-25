@@ -43,20 +43,16 @@ class SurgeriesActivity : Fragment(), SurgeriesActivityAdapter.MyClickListener {
     private fun dataIntialize() {
         surgeriesActivityList = arrayListOf<SurgeriesActivityList>()
         imageId = arrayOf(
-            R.drawable.bone2,
             R.drawable.heartsurgery
         )
         heading = arrayOf(
-            getString(R.string.typesur1),
             getString(R.string.typesur2)
         )
         time = arrayOf(
-            getString(R.string.date1),
             getString(R.string.date2)
         )
         fee = arrayOf(
-            getString(R.string.fees1),
-            getString(R.string.fees2)
+            "5000"
         )
         for (i in imageId.indices) {
             val surgeriesActivity = SurgeriesActivityList(imageId[i], heading[i], time[i], fee[i])
